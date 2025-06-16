@@ -7,30 +7,29 @@
 <body>
 
 
-<div >
+	<div>
 
-	<form > 
-		<h1 >Transaction ID: <span th:text="${specificTransaction.id}"> 
-	
-		</span> <span th:if="${specificTransaction.type=='D'}">(Debit)
-		</span>
-		<span th:if="${specificTransaction.type=='C'}"> (Credit)
-		</span>
-		
-		</h1>
-		<p style="margin-bottom: 0em">Date: <span th:text="${specificTransaction.date}">
-		</span>
-		<p style="margin-bottom: 0em">Amount: <span th:ifth:text="${specificTransaction.amount}">
-		</span>
-		<p style="margin-bottom: 0em">Description: <span th:text="${specificTransaction.description}">
-		</span>
-		
-		</p>
-		
-	
-		 <a th:href="@{/transactions}"> back</a> 
-	</form>
-</div>
+		<form>
+			<h1>
+				Transaction ID: <span th:text="${specificTransaction.id}"> </span> <span
+					th:if="${specificTransaction.type=='D'}">(Debit) </span> <span
+					th:if="${specificTransaction.type=='C'}"> (Credit) </span>
+
+			</h1>
+			<p style="margin-bottom: 0em">
+				Date: <span th:text="${specificTransaction.date}"> </span>
+			<p style="margin-bottom: 0em">
+				Amount: <th:if="${specificTransaction.type=='C'}" th:text="${-specificTransaction.amount}"> </span>
+			<p style="margin-bottom: 0em">
+				Description: <span th:text="${specificTransaction.description}">
+				</span>
+
+			</p>
+
+
+			<a th:href="@{/transactions}"> back</a>
+		</form>
+	</div>
 
 </body>
 

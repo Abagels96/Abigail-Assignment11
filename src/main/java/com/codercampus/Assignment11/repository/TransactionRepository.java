@@ -32,26 +32,15 @@ public class TransactionRepository {
 
 	}
 
-
-
 	public List<Transaction> findAll() {
-					                                      
-				                               
+
 		return transactions;
 	}
-	
-	
-
-	
-	
-	
-	
 
 	public Optional<Transaction> findById(Long transactionId) {
 
 		Optional<Transaction> foundTransaction = transactions.stream().filter(t -> t.getId().equals(transactionId))
 				.findFirst();
-		System.out.println(foundTransaction);
 		return foundTransaction;
 	}
 
@@ -85,12 +74,11 @@ public class TransactionRepository {
 
 			ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 			this.transactions = (List<Transaction>) objectInputStream.readObject();
-			
+
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 
 	}
-
 
 }
