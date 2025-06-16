@@ -27,12 +27,11 @@ public class TransactionController {
 //	
 
 	
-	@GetMapping("/showTransactions")
+	@GetMapping("/transactions")
 	public String getTransactions(ModelMap model) {
 	List<Transaction> transactions=	service.importTransactions();
-		model.put("transactions", transactions);
-		model.addAttribute("lists", Collections.class);
-		model.addAttribute("utility",TransactionUtility.class);
+		model.put("allTransactions", transactions);
+		
 		return "transactionsView";
 		
 	}
@@ -40,7 +39,7 @@ public class TransactionController {
 	
 	
 	
-	@GetMapping("/showTransactions/{transactionId}")
+	@GetMapping("/transactions/{transactionId}")
 	
 	public String retrieveSpecificTransaction(ModelMap model, @PathVariable Long transactionId) {
 
@@ -53,7 +52,7 @@ public class TransactionController {
 			return "Error message";
 		}
 	
-		return "transactions-view";
+		return "specific";
 		
 		
 		

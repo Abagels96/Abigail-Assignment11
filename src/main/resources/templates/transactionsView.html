@@ -45,9 +45,9 @@
 <!-- 			<td>38.50</td> -->
 <!-- 			<td></td> -->
 		</tr>
-		<tbody th:with= "sortedTransactions=${#lists.sort(transactions,utility.byDate)}">
-		<tr th:each="transaction:${sortedTransactions}" th:inline="text" > 
-			<td th:inline="text"> <a th:href="@{/showTransactions/{transactionId}(transactionId=${transaction.id})}"> [[${transaction.id}]]</a></td>
+		
+		<tr th:each="transaction:${allTransactions}" th:inline="text"> 
+			<td th:inline="text"> <a th:href="@{/transactions/{transactionId}(transactionId=${transaction.id})}"> [[${transaction.id}]]</a></td>
 			<td th:inline="text">[[${transaction.date}]]</td>
 			<td th:inline="text">[[${transaction.retailer}]]</td>
 			<td th:if="${transaction.type=='C'}">[[${transaction.amount}]]</td>
@@ -55,7 +55,7 @@
 			<td th:if="${transaction.type=='D'}">[[${transaction.amount}]]</td>
 			
 			</tr>
-			</tbody>
+			
 	</table>
 	
 	

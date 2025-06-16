@@ -20,17 +20,15 @@
 		</h1>
 		<p style="margin-bottom: 0em">Date: <span th:text="${specificTransaction.date}">
 		</span>
-		<p style="margin-bottom: 0em">Amount: <span th:text="${specificTransaction.amount}">
+		<p style="margin-bottom: 0em">Amount: <span th:ifth:text="${specificTransaction.amount}">
 		</span>
 		<p style="margin-bottom: 0em">Description: <span th:text="${specificTransaction.description}">
 		</span>
 		
 		</p>
 		
-		<!-- I need to double up style tags or something to get the words closer together then I need to make the back button -->
-		<!-- different and then import the values into their correct spots. All of this is overwhelming-->
-
-<!-- 		<button>back</button> -->
+	
+		 <a th:href="@{/transactions}"> back</a> 
 	</form>
 </div>
 

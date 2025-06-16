@@ -35,6 +35,8 @@ public class TransactionRepository {
 
 
 	public List<Transaction> findAll() {
+					                                      
+				                               
 		return transactions;
 	}
 	
