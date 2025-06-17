@@ -19,10 +19,10 @@
 			<p style="margin-bottom: 0em">
 				Date: <span th:text="${specificTransaction.date}"> </span>
 			<p style="margin-bottom: 0em">
-				<span th:text="${specificTransaction.amount}"> </span>
+				<span th:if="${specificTransaction.type=='D'}"th:text="${specificTransaction.amount}" > </span>
 			</p>
 			<p style="margin-bottom: 0em">
-				<span th:if="${specificTransaction.type=='C'}">${-specificTransaction.amount} </span>
+				<span th:if="${specificTransaction.type=='C'}">[[${-specificTransaction.amount}]] </span>
 			</p>
 			<p style="margin-bottom: 0em">
 				Description: <span th:text="${specificTransaction.description}">
